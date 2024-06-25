@@ -1,0 +1,82 @@
+@charset "ISO-8859-1";
+body {
+            font-family: 'Orbitron', sans-serif;
+            background: radial-gradient(circle, #1a1a1a, #000000);
+            color: #00FFFF;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #00FFFF;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px #00FFFF;
+        }
+        h2, h3 {
+            text-align: center;
+            color: #00FFFF;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"], input[type="password"], input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #00FFFF;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #00FFFF;
+            -webkit-appearance: none;
+        }
+        input[type="submit"] {
+            border: none;
+            background-color: #00FFFF;
+            color: #000;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #009999;
+            transform: scale(1.05);
+            
+        }
+        input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0.8) inset !important;
+        -webkit-text-fill-color: #00FFFF !important;
+        border: 1px solid #00FFFF;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+        
+        .underline {
+            text-decoration: underline;
+        }
+        
+        a {
+            color: #00FFFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #009999;
+        }
+        .field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
