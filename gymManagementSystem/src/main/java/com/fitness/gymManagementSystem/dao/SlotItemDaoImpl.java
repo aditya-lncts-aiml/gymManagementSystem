@@ -15,7 +15,7 @@ public class SlotItemDaoImpl implements SlotItemDao {
 	private SlotItemRepository repository;
 	
 	@Override
-	public void saveNewSlotItem(SlotItem slotItem) {
+	public void save(SlotItem slotItem) {
 		repository.save(slotItem);
 
 	}

@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.User;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -20,7 +21,9 @@ public class GymUser extends User{
 	private String password;
 	private String firstName;
 	private String lastName;
+	@Column(unique = true)
 	private String email;
+	@Column(unique = false)
 	private String phone_number;
 	private String type;
 	public GymUser() {

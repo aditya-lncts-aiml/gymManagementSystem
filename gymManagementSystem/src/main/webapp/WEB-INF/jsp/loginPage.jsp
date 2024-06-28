@@ -10,6 +10,9 @@
     <style>
         <%@include file="/WEB-INF/css/loginPage.css"%>
     </style>
+    <script type="text/javascript">
+    <%@include file="/WEB-INF/js/loginPage.js" %>
+    </script>
 </head>
 <body>
     <c:url value="/login" var="login" />
@@ -19,8 +22,8 @@
             <form:form action="${login}" method="post">
                 Enter Username: <input type="text" name="username" placeholder="Username" required/>
                 <br />
-                Enter Password: <input type="password" name="password" placeholder="Password" required/>
-                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                Enter Password:<input type="password" name="password" id="Password" placeholder="Password" required/>
+                <input type="checkbox" align="left" onclick="myFunction()">Show Password
                 <br />
                 <input type="submit" value="Submit" />
             </form:form>

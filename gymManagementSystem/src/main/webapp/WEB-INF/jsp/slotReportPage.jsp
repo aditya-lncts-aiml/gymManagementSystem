@@ -27,7 +27,7 @@
 <td>${slot.slotId}</td>
 <td>${slot.slotTime}</td>
 <td>${slot.pricing}</td>
-<td><a href="/slot-show/${slot.slotId}">Slot Enquire</a></td>
+<td><a href="/slot-show/${slot.slotId}">Enquire</a></td>
 
 </tr>
 <br/><br/>

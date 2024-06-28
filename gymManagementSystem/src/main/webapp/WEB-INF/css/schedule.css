@@ -28,7 +28,7 @@ background-attachment: fixed;
             transition: background 0.3s;
         }
         .day:hover {
-            background: rgba(255, 165, 0, 0.7);
+            background: rgb(255, 165, 0, 0.7);
         }
         .active {
             background: rgba(255, 165, 0, 1);
