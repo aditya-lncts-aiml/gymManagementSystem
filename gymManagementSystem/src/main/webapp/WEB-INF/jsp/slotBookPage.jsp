@@ -36,7 +36,7 @@
         <th>Item No</th>
         <th>Item Name</th>
         <th>Total Slot</th>
-        <th>Available Seat</th>
+        <th>Seat Vacant</th>
         <th>Select</th>
         </tr>
         <c:forEach items="${itemList}" var="item">
@@ -44,12 +44,15 @@
         <td>${item.itemId}</td>
         <td>${item.itemName}</td>
         <td>${item.totalSeat}</td>
-        <td>0</td>
+        <td>${item.seatVacant}</td>
         <td><input name="selectItem" type="radio" value="${item.itemId}"/></td>
         </tr>
         </c:forEach>
         </table>
-        <a href="#"><button type="button">Submit</button></a>
+        <div class="button-container">
+            <a href="/#"><button type="submit">Submit</button></a>
+            <a href="/index"><button type="button">Return</button></a>
+        </div>
         </form:form>
     </div>
 </div>

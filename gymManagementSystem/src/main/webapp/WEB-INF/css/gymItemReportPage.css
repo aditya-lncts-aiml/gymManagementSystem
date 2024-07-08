@@ -4,7 +4,6 @@ body {
             background-image: url("/Files/unisex3.jpg");
             background-size: cover;
             background-repeat: no-repeat !important;
-            background-attachment: fixed;
         }
         .container {
             display: flex;

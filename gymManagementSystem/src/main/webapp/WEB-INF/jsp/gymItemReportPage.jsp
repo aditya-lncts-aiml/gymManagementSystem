@@ -12,21 +12,22 @@
 </style>
 </head>
 <body>
-<div class="container" align="center">
+<div class="container" >
 <form action="gymitems" method="post">
-<table border="2">
+<table>
 <caption><h1><i>GYM ITEMS</i></h1></caption>
 <tr>
 <th>Item Number</th>
 <th>Item Name</th>
 <th>Total Seat/Slot</th>
+<th>Add To Slots</th>
 </tr>
 <c:forEach items="${itemList}" var="item">
 <tr>
 <td>${item.itemId}</td>
 <td>${item.itemName}</td>
 <td>${item.totalSeat}</td>
-
+<td><a href="/slot-item-add/${item.itemId}">Add To Slots</a></td>
 </tr>
 <br/><br/>
 

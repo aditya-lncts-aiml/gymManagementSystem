@@ -51,5 +51,10 @@ public class GymItemDaoImpl implements GymItemDao {
 	public void removeItem(Long id) {
 		repository.deleteById(id);;
 	}
+	
+	@Override
+	public Integer findTotalSeatById(long id) {
+		return repository.findTotalSeatById(id);
+	}
 
 }

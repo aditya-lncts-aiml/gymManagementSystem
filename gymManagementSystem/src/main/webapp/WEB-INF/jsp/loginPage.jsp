@@ -23,7 +23,7 @@
                 Enter Username: <input type="text" name="username" placeholder="Username" required/>
                 <br />
                 Enter Password:<input type="password" name="password" id="Password" placeholder="Password" required/>
-                <input type="checkbox" align="left" onclick="myFunction()">Show Password
+                <input type="checkbox" onclick="myFunction()">Show Password
                 <br />
                 <input type="submit" value="Submit" />
             </form:form>
