@@ -49,7 +49,7 @@ public class GymItemDaoImpl implements GymItemDao {
 	@Override
 	@Transactional
 	public void removeItem(Long id) {
-		repository.deleteById(id);;
+		repository.deleteById(id);
 	}
 	
 	@Override

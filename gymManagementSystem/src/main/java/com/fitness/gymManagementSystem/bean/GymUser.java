@@ -23,7 +23,7 @@ public class GymUser extends User{
 	private String lastName;
 	@Column(unique = true)
 	private String email;
-	@Column(unique = false)
+	@Column(unique = true)
 	private String phone_number;
 	private String type;
 	public GymUser() {

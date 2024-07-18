@@ -1,6 +1,6 @@
 package com.fitness.gymManagementSystem.controller;
 
-import com.fitness.gymManagementSystem.bean.GymItem;
+
 import com.fitness.gymManagementSystem.bean.GymUser;
 import com.fitness.gymManagementSystem.service.GymUserService;
 
@@ -55,14 +55,6 @@ public class LoginController {
 	@GetMapping("/loginerror")
 	public ModelAndView showLoginErrorPage() {
 		return new ModelAndView("loginErrorPage");
-	}
-	
-	@GetMapping("/gymslotbooking")
-	public ModelAndView showclassSchedulePage() {
-		GymItem gymItem=new GymItem();
-		ModelAndView mv=new ModelAndView("schedule");
-		mv.addObject("slotRecord",gymItem);
-		return mv;
 	}
 	
 //	@PostMapping("/gymslotbooking")

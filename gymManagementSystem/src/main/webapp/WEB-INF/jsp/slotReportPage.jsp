@@ -27,19 +27,13 @@
 <td>${slot.slotId}</td>
 <td>${slot.slotTime}</td>
 <td>${slot.pricing}</td>
-<td><a href="/slot-show/${slot.slotId}">Enquire</a></td>
-
+<td><a href="/slot-book/${slot.slotId}">Enquire</a></td>
 </tr>
-<br/><br/>
-
 </c:forEach>
 </table>
-<br/><br/>
-
 <div class="return">
 <a href="/index"><button type="button">Return</button></a>
 </div>
-
 </form>
 </div>
 </body>

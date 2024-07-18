@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,16 +22,16 @@
         <ul>
             <li><a href="/index" class="active">HOME</a></li>
             <li><a href="/slotreport">SLOT BOOKING</a></li>
-            <li><a href="#">FEEDBACK</a></li>
+            <li><a href="/booked">BOOKED SLOTS</a></li>
+            <li><a href="/feedback">FEEDBACK</a></li>
             <li><a href="/logout">LOGOUT</a></li>
         </ul>
     </div>
     <div class="welcome-message">
         <h1>Welcome to Gym Management System</h1>
     </div>
-    
-    <footer>
+    <!--<footer>
     <p>&copy; 2024 Online Gym Management System. All rights are reserved</p>
-    </footer>
+    </footer>-->
 </body>
 </html>

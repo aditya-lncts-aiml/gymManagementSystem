@@ -8,11 +8,11 @@ body {
         }
         .container {
             display: flex;
-            margin: auto auto;
             justify-content: center;
             padding: 20px;
         }
         form {
+        margin:auto;
             background-color: #0000009e;
             padding: 20px;
             border-radius: 20px;
@@ -31,6 +31,9 @@ body {
         }
         th{
             background-color: #ff6600;
+        }
+        td a{
+        color:white;
         }
         .return{
             width: 200%;

@@ -11,18 +11,15 @@ public class SlotItemEmbed implements Serializable {
 	private Long slotId;
 	@NotNull
 	private Long itemId;
-	
 	public SlotItemEmbed() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
 	public SlotItemEmbed(@NotNull Long slotId, @NotNull Long itemId) {
 		super();
 		this.slotId = slotId;
 		this.itemId = itemId;
 	}
-
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub
@@ -30,7 +27,6 @@ public class SlotItemEmbed implements Serializable {
 		int val=Integer.parseInt(ss);
 		return val;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		// TODO Auto-generated method stub
@@ -40,22 +36,16 @@ public class SlotItemEmbed implements Serializable {
 		else
 			return false;
 	}
-
 	public Long getSlotId() {
 		return slotId;
 	}
-
 	public void setSlotId(Long slotId) {
 		this.slotId = slotId;
 	}
-
 	public Long getItemId() {
 		return itemId;
 	}
-
 	public void setItemId(Long itemId) {
 		this.itemId = itemId;
 	}
-	
-	
 }

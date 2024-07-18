@@ -29,7 +29,6 @@ public class SlotItemDaoImpl implements SlotItemDao {
 
 	@Override
 	public SlotItem findItemById(SlotItemEmbed id) {
-		// TODO Auto-generated method stub
 		return repository.findById(id).get();
 	}
 	
@@ -41,5 +40,6 @@ public class SlotItemDaoImpl implements SlotItemDao {
 	public Set<SlotItemEmbed> findAllEmbeds(){
 		return repository.findAllEmbeds();
 	}
+	
 
 }
