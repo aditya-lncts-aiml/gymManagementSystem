@@ -1,83 +1,111 @@
 @charset "ISO-8859-1";
-body{
-  background-image: url("/Files/additem.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; 
-  margin: 0;
-}
-.container{
-  background-color: rgba(0, 0, 0, .7);
-  margin: auto;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 600px;
-  border-radius: 15px;
-  text-align: center;
-}
-h1{
-  color: aliceblue;
-}
-.slot-container{
-  position: relative;
-  text-align: center;
-  color: aliceblue;
-  margin: auto ;
-  display: flex;
-  padding: 20px;
-}
-.slot-container table{
-  margin: auto;
-}
-.slot-container th{
-  font-size: 24px;
-  background-color: white;
-  color: black;
-}
-.slot-container td{
-  font-size: 20px;
-}
-.form-container{
-  position: relative;
-  display: flex;
-  color: aliceblue;
-  text-align: center;
-  padding: 20px;
-  justify-content: center;
-}
-form {
-  margin: auto;
-}
 
-.form-container th{
-  font-size: 24px;
-  color: black;
-  background-color: aliceblue;
-}
-.form-container td{
-  font-size: 20px;
-}
-.button-container {
+body {
+    background: #121212;
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
     display: flex;
-    gap: 10px; 
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
-.button-container a {
-    text-decoration: none; 
-    align-items: center;
+.container {
+    width: 80%;
+    max-width: 900px;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
-.button-container button{
-    width: 100px;
-    align-items: center;
-    border-radius: 20px;
-    background-color: red;
-    border-color: red;
-    font-size: 20px;
+
+h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.slot-container table,
+.form-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #2e2e2e;
+}
+
+th {
+    background-color: #333333;
+    font-size: 18px;
+}
+
+td {
+    color: #e0e0e0;
+    font-size: 16px;
+}
+
+td a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-container table td{
+  padding: 5px;
+}
+
+td a:hover {
+    color: #ff6600;
+    box-shadow: 0 0 10px #ff6600;
+}
+
+label {
+    color: #e0e0e0;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="radio"],
+input[list] {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #2e2e2e;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+input[type="radio"] {
+    width: auto;
+}
+
+.button-container {
+    text-align: center;
+}
+
+button {
+    border: none;
+    background: #333333;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+    text-transform: uppercase;
+    margin: 5px;
 }
+
+button:hover {
+    background: #ff6600;
+    box-shadow: 0 0 10px #ff6600;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');

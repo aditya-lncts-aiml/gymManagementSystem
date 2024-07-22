@@ -56,5 +56,10 @@ public class GymItemDaoImpl implements GymItemDao {
 	public Integer findTotalSeatById(long id) {
 		return repository.findTotalSeatById(id);
 	}
+	
+	@Override
+	public String findItemName(Long itemId) {
+		return repository.findItemName(itemId);
+	}
 
 }

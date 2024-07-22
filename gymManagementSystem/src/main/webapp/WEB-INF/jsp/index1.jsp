@@ -33,5 +33,8 @@
     <div class="welcome-message">
         <h1>Welcome to Gym Management System</h1>
     </div>
+    <footer>
+     Copyright © 2024 Infosys Interns Fitness Club. All Rights Reserved
+    </footer>
 </body>
 </html>

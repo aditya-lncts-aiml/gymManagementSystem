@@ -12,4 +12,7 @@ public interface GymItemRepository extends JpaRepository<GymItem, Long> {
 	
 	@Query("select totalSeat from GymItem where itemId =?1")
 	public Integer findTotalSeatById(Long id);
+	
+	@Query("select itemName from GymItem where itemId=?1")
+	String findItemName(Long itemId);
 }

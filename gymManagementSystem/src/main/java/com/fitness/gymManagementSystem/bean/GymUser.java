@@ -24,7 +24,7 @@ public class GymUser extends User{
 	@Column(unique = true)
 	private String email;
 	@Column(unique = true)
-	private String phone_number;
+	private Long phone_number;
 	private String type;
 	public GymUser() {
 		super("abc","xyz",new ArrayList<>());
@@ -37,7 +37,7 @@ public class GymUser extends User{
 	}
 	
 	public GymUser(String username, String password,Collection<? extends GrantedAuthority> authorities,String username2,String password2, String firstName,
-			String email, String type,String lastName,String phone_number) {
+			String email, String type,String lastName,Long phone_number) {
 		super(username,password,authorities);
 		this.username = username2;
 		this.password = password2;
@@ -85,10 +85,10 @@ public class GymUser extends User{
 	}
 	
 	
-	public String getPhone_number() {
+	public Long getPhone_number() {
 		return phone_number;
 	}
-	public void setPhone_number(String phone_number) {
+	public void setPhone_number(Long phone_number) {
 		this.phone_number = phone_number;
 	}
 	@Override

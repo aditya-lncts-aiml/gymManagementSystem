@@ -15,6 +15,7 @@
         <p>Booking ID: ${booking.bookingId}</p>
         <p>Slot ID: ${booking.slotId}</p>
         <p>Username: ${booking.username}</p>
+        <p>Item Name: ${itemName}</p>
         <p>Item ID: ${booking.itemId}</p>
         <a href="/index"><button type="button">Return to Home</button></a>
     </div>

@@ -1,0 +1,37 @@
+@charset "ISO-8859-1";
+body{
+  background-image: url("/Files/additem.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  margin: auto;
+  display: flex;
+  align-self: center;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.data{
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  width: 30vh;
+  margin: auto;
+}
+.data p{
+  padding: auto;
+}
+.data a button{
+  color: aliceblue;
+  background-color: brown;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}

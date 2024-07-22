@@ -10,9 +10,6 @@
 <style type="text/css">
 <%@ include file="/WEB-INF/css/slotBookPage.css" %>
 </style>
-<script type="text/javascript">
-<%@include file="/WEB-INF/js/slotBookPage1.js" %>
-</script>
 </head>
 <body>
 <div class="container">
@@ -34,7 +31,7 @@
     <div class="form-container">
         <form:form action="/slot-book" method="post" modelAttribute="gymBookRecord">
             <input type="hidden" value="${slot.slotId}" name="slot_id"/>
-            Select User Id:<input list="users" name="userId"/>
+            Select User Id:<input list="users" name="userId" required="required"/>
             <datalist id="users">
             <c:forEach items="${userList}" var="usr">
             <option value="${usr}"></option>
@@ -54,13 +51,14 @@
                     <td>${item.itemName}</td>
                     <td>${item.totalSeat}</td>
                     <td>${item.seatVacant}</td>
-                    <td><input name="selectItem" type="radio" value="${item.itemId}"/></td>
+                    <td><input name="selectItem" type="radio" value="${item.itemId}" required="required"/></td>
                 </tr>
                 </c:forEach>
             </table>
             <div class="button-container">
                 <button id="submit-button" type="submit">Book</button>
                 <a href="/index"><button type="button">Return</button></a>
+                <button type="reset">Reset</button>
             </div>
         </form:form>
     </div>

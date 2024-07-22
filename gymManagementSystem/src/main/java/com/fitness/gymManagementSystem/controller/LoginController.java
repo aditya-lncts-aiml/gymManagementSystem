@@ -56,18 +56,4 @@ public class LoginController {
 	public ModelAndView showLoginErrorPage() {
 		return new ModelAndView("loginErrorPage");
 	}
-	
-//	@PostMapping("/gymslotbooking")
-//	public ModelAndView saveGymSlotBookingPage(@ModelAttribute("slotRecord") GymItem gymItem) {
-//		GymItem item=new GymItem();
-//		item.saveItem(item);
-//		item.setItemId(gymItem.getItemId());
-//		item.setDays(gymItem.getDays());
-//		item.setItemName(gymItem.getItemName());
-//		item.setSeat(gymItem.getSeat());
-//		item.setSeatBooked(gymItem.getSeatBooked());
-//		item.setSeatAvailable(item.getSeat()-item.getSeatBooked());
-//		 Redirect to verification page after successful registration
-//		return new ModelAndView("index");
-//	}
 }

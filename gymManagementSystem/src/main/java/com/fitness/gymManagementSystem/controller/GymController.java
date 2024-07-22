@@ -75,7 +75,6 @@ public class GymController {
     @PostMapping("/gymitem")
     public ModelAndView saveItemEntryPage(@ModelAttribute("itemRecord") GymItem gymItem) {
     	gymItemDao.saveNewItem(gymItem);
-//    	return new ModelAndView("index");
     	return new ModelAndView("redirect:/index");
     }    
     @GetMapping("/gymitems")
@@ -183,14 +182,16 @@ public class GymController {
         	 return new ModelAndView("redirect:/book-success/" + gymBook.getBookingId());
         }
         else {
-        	throw new SeatNotAvailableException("You have booked this slot change the slot or cancel your booking");
+        	throw new SeatNotAvailableException("You have booked slot in this timing  change the slot or cancel your booking");
         }
     }
     @GetMapping("/book-success/{bookingId}")
     public ModelAndView showSuccessPage(@PathVariable Long bookingId) {
         GymBook booking = gymBookDao.findBookInfoById(bookingId);
+        String itemName=gymItemDao.findItemName(gymBookDao.findItemId(bookingId));
         ModelAndView mv = new ModelAndView("bookingSuccessPage");
         mv.addObject("booking", booking);
+        mv.addObject("itemName", itemName);
         return mv;
     }
     @GetMapping("/slot-item-add/{id}")

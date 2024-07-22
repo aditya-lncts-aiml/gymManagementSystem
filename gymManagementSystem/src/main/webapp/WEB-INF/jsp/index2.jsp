@@ -33,5 +33,8 @@
     <!--<footer>
     <p>&copy; 2024 Online Gym Management System. All rights are reserved</p>
     </footer>-->
+    <footer>
+     Copyright © 2024 Infosys Interns Fitness Club. All Rights Reserved
+    </footer>
 </body>
 </html>

@@ -13,4 +13,5 @@ public interface GymItemDao {
 	public Long generateItemId();
 	public void removeItem(Long id);
 	public Integer findTotalSeatById(long id);
+	public String findItemName(Long itemId);
 	}

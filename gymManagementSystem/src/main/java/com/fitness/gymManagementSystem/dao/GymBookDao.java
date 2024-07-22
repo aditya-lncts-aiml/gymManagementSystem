@@ -12,4 +12,5 @@ public interface GymBookDao {
 	public void deleteById(long id);
 	public List<GymBook> getEntitiesByUsername(String username);
 	public List<GymBook> findBySlotIdAndUsername(Long id,String username);
+	public Long findItemId(Long bookingId);
 }

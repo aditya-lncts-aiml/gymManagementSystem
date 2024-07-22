@@ -1,60 +1,113 @@
 @charset "ISO-8859-1";
-body {
 
-            background-image: url("/Files/unisex3.jpg");
-            background-size: cover;
-            background-repeat: no-repeat !important;
-            background-attachment: fixed;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-        }
-        form {
-        margin:auto;
-            background-color: #0000009e;
-            padding: 20px;
-            border-radius: 20px;
-        }
-        
-        table {
-            margin-bottom: 20px;
-        }
-        table, th, td {
-            border-style: hidden;
-        }
-        th, td {
-            padding: 20px;
-            text-align: center;
-            color: antiquewhite;
-        }
-        th{
-            background-color: #ff6600;
-        }
-        td a{
-        color:white;
-        }
-        .return{
-            width: 200%;
-        }
-        .return a{
-        color:black;
-        text-decoration: none;
-        
-        }
-        button{
-        border: 1px solid #ddd;
-        width: 50%;
-        display: block;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        font-weight: bolder;
-        text-decoration: none;
-        cursor: pointer;
-        }
-        caption{
-            color: antiquewhite;
-        font-weight: 900;
-        }
+body {
+    background: #121212;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+form {
+    position: relative;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+caption {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #2e2e2e;
+}
+
+th {
+    background-color: #333333;
+    font-size: 18px;
+}
+
+td {
+    color: #e0e0e0;
+    font-size: 16px;
+}
+
+td a {
+    color: #ffffff;
+    text-decoration: underline;
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+td a:hover {
+    color: #ff6600;
+    box-shadow: 0 0 10px #ff6600;
+}
+
+.return {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.return a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: #333333;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: #ff6600;
+    box-shadow: 0 0 10px #ff6600;
+}
+
+.action-btn {
+    color: #ffffff;
+    background-color: #444444;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #ff6600;
+    box-shadow: 0 0 10px #ff6600;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');

@@ -55,4 +55,8 @@ public class GymBookDaoImpl implements GymBookDao {
 	public List<GymBook> findBySlotIdAndUsername(Long id,String username){
 		return repository.findBySlotIdAndUsername(id,username);
 	}
+	@Override
+	public Long findItemId(Long bookingId) {
+		return repository.findItemId(bookingId);
+	}
 }

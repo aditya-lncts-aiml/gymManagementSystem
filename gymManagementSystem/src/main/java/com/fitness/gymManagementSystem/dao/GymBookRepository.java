@@ -13,4 +13,6 @@ public interface GymBookRepository extends JpaRepository<GymBook, Long>{
 	
 	List<GymBook> findByUsername(String username);
 	List<GymBook> findBySlotIdAndUsername(Long id,String username);
+	@Query("select itemId from GymBook where bookingId=?1")
+	Long findItemId(Long bookingId);
 }

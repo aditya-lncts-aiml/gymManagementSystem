@@ -30,6 +30,8 @@
         </h3>
         <h2>
             <a href="/register" class="underline">Register for New User</a>
+            <br/>
+            <a href="/forgot-password">Forgot Password</a>
         </h2>
     </div>
 </body>
