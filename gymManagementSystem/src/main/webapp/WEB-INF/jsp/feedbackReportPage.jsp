@@ -7,35 +7,31 @@
 <meta charset="ISO-8859-1">
 <title>Item Report</title>
 <style type="text/css">
-<%@ include file="/WEB-INF/css/gymItemReportPage.css" %>
+<%@ include file="/WEB-INF/css/slotReportPage.css" %>
 </style>
 </head>
 <body>
 <div class="container">
-<form action="gymitems" method="post">
 <table>
-<caption><h1><i>GYM ITEMS</i></h1></caption>
+<caption><h1><i>Feedbacks</i></h1></caption>
 <tr>
-<th>Item Number</th>
-<th>Item Name</th>
-<th>Total Seat/Slot</th>
-<th>Edit Seat</th>
-<th>Add To Slots</th>
+<th>Username</th>
+<th>Email Id</th>
+<th>Name</th>
+<th>How was your experience?</th>
 </tr>
-<c:forEach items="${itemList}" var="item">
+<c:forEach items="${feedback}" var="fb">
 <tr>
-<td>${item.itemId}</td>
-<td>${item.itemName}</td>
-<td>${item.totalSeat}</td>
-<td><a href="/gymitem/edit/${item.itemId}">Edit</a></td>
-<td><a href="/slot-item-add/${item.itemId}">Add To Slots</a></td>
+<td>${fb.username}</td>
+<td>${fb.email}</td>
+<td>${fb.name}</td>
+<td>${fb.content}</td>
 </tr>
 </c:forEach>
 </table>
 <div class="return">
 <a href="/index"><button type="button">Return</button></a>
 </div>
-</form>
 </div>
 </body>
 </html>

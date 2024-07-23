@@ -6,38 +6,30 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Feedback Form</title>
-<style type="text/css">
-</style>
+<style>
+        <%@include file="/WEB-INF/css/feedbackFormPage.css"%>
+    </style>
 </head>
 <body>
-<div class="container">
+<div class="container" align="center">
     <h1>Feedback Form</h1>
-    <form:form action="/submit-feedback" method="post" modelAttribute="feedback">
-    <form:input type="hidden" path="id" />
+    <form:form action="/submit-feedback" method="post" modelAttribute="feedback" class="feedback-form">
+        <form:hidden path="username"/>
+        <form:hidden path="email"/>
         <div class="form-group">
-            <label for="name">Name:</label>
-            <form:input path="name" type="text" id="name" required="true"/>
+            <label for="name">Enter Name:</label>
+            <form:input path="name" id="name" class="form-input"  required="required"/>
         </div>
         <div class="form-group">
-            <label for="email">Email:</label>
-            <form:input path="email" type="email" id="email" required="true"/>
+            <label for="content">Enter Text:</label>
+            <form:textarea rows="5" cols="50" path="content" id="content" class="form-textarea"  required="required"/>
         </div>
-        <div class="form-group">
-            <label for="rating">Rating:</label>
-            <form:select path="rating" id="rating">
-                <form:option value="1">1</form:option>
-                <form:option value="2">2</form:option>
-                <form:option value="3">3</form:option>
-                <form:option value="4">4</form:option>
-                <form:option value="5">5</form:option>
-            </form:select>
+        <div class="button-container">
+            <button type="submit" class="submit-btn">Submit</button>
+            <button type="reset" class="reset-btn">Reset</button>
         </div>
-        <div class="form-group">
-            <label for="comments">Comments:</label>
-            <form:textarea path="comments" id="comments" rows="5" cols="30"/>
-        </div>
-        <div class="form-group">
-            <button type="submit">Submit Feedback</button>
+        <div class="return-container">
+            <a href="/index" class="return-link">Return</a>
         </div>
     </form:form>
 </div>

@@ -22,7 +22,7 @@ import com.fitness.gymManagementSystem.dao.GymBookDao;
 import com.fitness.gymManagementSystem.dao.GymItemDao;
 import com.fitness.gymManagementSystem.dao.SlotDao;
 import com.fitness.gymManagementSystem.dao.SlotItemDao;
-import com.fitness.gymManagementSystem.exception.SeatNotAvailableException;
+import com.fitness.gymManagementSystem.exception.OperatorException;
 import com.fitness.gymManagementSystem.service.GymItemService;
 import com.fitness.gymManagementSystem.service.GymUserService;
 
@@ -50,6 +50,7 @@ public class GymController {
     @Autowired
     private FeedbackDao feedbackDao;
     
+    
     @GetMapping("/index")
     public ModelAndView showIndex() {
     	String indexPage="";
@@ -63,48 +64,82 @@ public class GymController {
     }
     @GetMapping("/gymitem")
     public ModelAndView showItemEntryPage() {
-        GymItem gymItem = new GymItem();
-        Long newId=gymItemDao.generateItemId();
-        List<GymItem> itemList=gymItemDao.displayAllItems();
-        gymItem.setItemId(newId);
-        ModelAndView mv = new ModelAndView("gymItemEntryPage");
-        mv.addObject("itemRecord", gymItem);
-        mv.addObject("itemList",itemList);
-        return mv;
+    	String usertype=userService.getType();
+    	if(usertype.equalsIgnoreCase("Admin")) {
+            GymItem gymItem = new GymItem();
+            Long newId=gymItemDao.generateItemId();
+            List<GymItem> itemList=gymItemDao.displayAllItems();
+            gymItem.setItemId(newId);
+            ModelAndView mv = new ModelAndView("gymItemEntryPage");
+            mv.addObject("itemRecord", gymItem);
+            mv.addObject("itemList",itemList);
+            return mv;
+    		
+    	}
+    	else {
+    		throw new OperatorException("Page Not Found");
+    	}
     }
     @PostMapping("/gymitem")
     public ModelAndView saveItemEntryPage(@ModelAttribute("itemRecord") GymItem gymItem) {
     	gymItemDao.saveNewItem(gymItem);
     	return new ModelAndView("redirect:/index");
     }    
-    @GetMapping("/gymitems")
-    public ModelAndView showItemReportPage() {
-    	List<GymItem> itemList=gymItemDao.displayAllItems();
-    	if(!itemList.isEmpty()) {
-    		ModelAndView mv=new ModelAndView("gymItemReportPage");
-        	mv.addObject("itemList",itemList);
-        	return mv;
+    @GetMapping("/gymitem/edit/{id}")
+    public ModelAndView showEditItemPage(@PathVariable("id") Long id) {
+    	String usertype=userService.getType();
+    	if(usertype.equalsIgnoreCase("Admin")) {
+    		GymItem gymItem = gymItemDao.findItemById(id);
+            String itemName=gymItemDao.findItemName(id);
+            ModelAndView mv = new ModelAndView("editGymItemPage");
+            mv.addObject("itemRecord", gymItem);
+            mv.addObject("itemName",itemName);
+            return mv;
     	}
     	else {
-    		throw new SeatNotAvailableException("No Gym Item Available");
+    		throw new OperatorException("Page Not Found");
     	}
     }
-    /*@GetMapping("/deleteitem/{id}")
-    public ModelAndView deleteItem(@PathVariable Long id) {
-        gymItemDao.removeItem(id);
-        ModelAndView mv = new ModelAndView("redirect:index");
-        return mv;
-    }*/ 
+
+    @PostMapping("/gymitem/update")
+    public ModelAndView updateItemEntryPage(@ModelAttribute("itemRecord") GymItem gymItem) {
+        gymItemDao.saveNewItem(gymItem);
+        return new ModelAndView("redirect:/gymitem");
+    }
+    @GetMapping("/gymitems")
+    public ModelAndView showItemReportPage() {
+    	String usertype=userService.getType();
+    	if(usertype.equalsIgnoreCase("Admin")) {
+    		List<GymItem> itemList=gymItemDao.displayAllItems();
+        	if(!itemList.isEmpty()) {
+        		ModelAndView mv=new ModelAndView("gymItemReportPage");
+            	mv.addObject("itemList",itemList);
+            	return mv;
+        	}
+        	else {
+        		throw new OperatorException("No Gym Item Available");
+        	}
+    	}
+    	else {
+    		throw new OperatorException("Page not found");
+    	}
+    }
     @GetMapping("/slotentry")
     public ModelAndView showSlotEntryPage() {
-        Slot slot = new Slot();
-        Long newId=slotDao.generateSlotId();
-        List<Slot> slotList=slotDao.displayAllSlot();
-        slot.setSlotId(newId);
-        ModelAndView mv = new ModelAndView("slotEntryPage");
-        mv.addObject("slotList", slotList);
-        mv.addObject("slotRecord", slot);
-        return mv;
+    	String usertype=userService.getType();
+    	if(usertype.equalsIgnoreCase("Admin")) {
+    		Slot slot = new Slot();
+            Long newId=slotDao.generateSlotId();
+            List<Slot> slotList=slotDao.displayAllSlot();
+            slot.setSlotId(newId);
+            ModelAndView mv = new ModelAndView("slotEntryPage");
+            mv.addObject("slotList", slotList);
+            mv.addObject("slotRecord", slot);
+            return mv;
+    	}
+    	else {
+    		throw new OperatorException("Page not found");
+    	}
     }
     @PostMapping("/slotentry")
     public ModelAndView saveSlotEntryPage(@ModelAttribute("slotRecord") Slot slot) {
@@ -126,7 +161,7 @@ public class GymController {
         	return mv;
     	}
     	else {
-    		throw new SeatNotAvailableException("No Slots Available");
+    		throw new OperatorException("No Slots Available");
     	}
     }    
     @GetMapping("/slot-book/{id}")
@@ -177,12 +212,12 @@ public class GymController {
         		slotItemDao.save(slotItem);
         	}
         	else {
-        		throw new SeatNotAvailableException("Seat Not Available");
+        		throw new OperatorException("Seat Not Available");
         	}
         	 return new ModelAndView("redirect:/book-success/" + gymBook.getBookingId());
         }
         else {
-        	throw new SeatNotAvailableException("You have booked slot in this timing  change the slot or cancel your booking");
+        	throw new OperatorException("You have booked slot in this timing  change the slot or cancel your booking");
         }
     }
     @GetMapping("/book-success/{bookingId}")
@@ -202,7 +237,7 @@ public class GymController {
         	return new ModelAndView("redirect:/index");
     	}
     	else {
-    		throw new SeatNotAvailableException("No Slots available");
+    		throw new OperatorException("No Slots available");
     	}
     }
     @GetMapping("/booked")
@@ -220,7 +255,7 @@ public class GymController {
         	return mv;
     	}
     	else {
-    		throw new SeatNotAvailableException("You have not Booked any slot");
+    		throw new OperatorException("You have not Booked any slot");
     	}
     }
     @PostMapping("/booked")
@@ -242,31 +277,88 @@ public class GymController {
 
         return new ModelAndView("redirect:/index");
     }
-    @GetMapping("/feedback")
-    public ModelAndView showFeedbackForm() {
-        Feedback fb=new Feedback();
-        Long newId=feedbackDao.generateFeedbackId();
-        fb.setId(newId);
-        ModelAndView mv = new ModelAndView("feedbackFormPage");
-        mv.addObject("feedback", fb);
-        return mv;
+    @GetMapping("/customer-modification")
+    public ModelAndView listCustomerPage() {
+    	String usertype=userService.getType();
+    	List<String> userName=userService.getAllCustomers();
+    	if(usertype.equalsIgnoreCase("Admin")) {
+    		ModelAndView mv=new ModelAndView("listCustomerPage");
+    		mv.addObject("list",userName);
+    		return mv;
+    	}
+    	else {
+    		throw new OperatorException("This is only for Admin");
+    	}
+    	
     }
-    @PostMapping("/submit-feedback")
-    public ModelAndView submitFeedback(@ModelAttribute("feedback") Feedback feedback) {
-        feedbackDao.save(feedback);
-        return new ModelAndView("redirect:/feedback-success");
+    @GetMapping("/delete-customer/{username}")
+    public ModelAndView deleteCustomer(@PathVariable String username) {
+    	List<GymBook> book=gymBookDao.getEntitiesByUsername(username);
+    	if(book.isEmpty()) {
+        	userService.removeItem(username);
+        	return new ModelAndView("redirect:/customer-modification");
+    	}
+    	else {
+    		throw new OperatorException(username+" booked slots. If you want to delete "+username+" cancel the booking first");
+    	}
     }
-    @GetMapping("/feedback-success")
-    public ModelAndView showFeedbackSuccess() {
-        return new ModelAndView("feedbackSuccessPage");
-    }
-    @ExceptionHandler(SeatNotAvailableException.class)
-      public ModelAndView handleSeatNotFoundException(SeatNotAvailableException exception){
+    @ExceptionHandler(OperatorException.class)
+      public ModelAndView handleSeatNotFoundException(OperatorException exception){
     	ModelAndView mv = new ModelAndView("exceptionPage");
         mv.addObject("errorMessage", exception.getMessage());
         return mv;
       }
-    
+    @GetMapping("/feedback")
+    public ModelAndView feedbackpage() {
+    	Feedback fb = new Feedback();
+        ModelAndView mv = new ModelAndView("feedbackFormPage");
+        mv.addObject("feedback",fb);
+        return mv;
+    }
+    @PostMapping("submit-feedback")
+    public ModelAndView feedBackSubmissionPage(@ModelAttribute("feedback") Feedback feedback) {
+    	feedback.setUsername(userService.getUser().getUsername());
+    	feedback.setEmail(userService.getUser().getEmail());
+    	feedbackDao.save(feedback);
+    	return new ModelAndView("redirect:index");
+    }
+    @GetMapping("/feedback-report")
+    public ModelAndView showFeedbackReportpage() {
+    	List<Feedback> feedback = feedbackDao.getFeedbackList();
+    	ModelAndView mv=new ModelAndView("feedbackReportPage");
+    	mv.addObject("feedback",feedback);
+    	return mv;
+    }
+    @GetMapping("/edit-slot")
+    public ModelAndView showSlotEditPage() {
+    	List<Slot> slotList=slotDao.displayAllSlot();
+    	if(!slotList.isEmpty()) {
+        	ModelAndView mv=new ModelAndView("adminSlotReportPage");
+        	mv.addObject("slotList",slotList);
+        	return mv;
+    	}
+    	else {
+    		throw new OperatorException("No Slots Available");
+    	}
+    }    
+    @GetMapping("/slot/edit/{id}")
+    public ModelAndView showEditSlotPage(@PathVariable("id") Long id) {
+    	String usertype=userService.getType();
+    	if(usertype.equalsIgnoreCase("Admin")) {
+    		Slot slot= slotDao.findSlotById(id);
+            ModelAndView mv = new ModelAndView("editSlotPrice");
+            mv.addObject("slotRecord", slot);
+            return mv;
+    	}
+    	else {
+    		throw new OperatorException("Page Not Found");
+    	}
+    }
+    @PostMapping("/slot/update")
+    public ModelAndView updateSlotPage(@ModelAttribute("slotRecord") Slot slot) {
+        slotDao.saveNewSlot(slot);
+        return new ModelAndView("redirect:/edit-slot");
+    }
     
 }
 

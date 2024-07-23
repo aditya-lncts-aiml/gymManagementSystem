@@ -2,6 +2,8 @@ package com.fitness.gymManagementSystem.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -36,6 +38,11 @@ public class GymUserService implements UserDetailsService {
 	}
 	public List<String> getAllCustomers(){
 		return repository.findAllCustomerUsers();
+	}
+	
+	
+	public void removeItem(String username) {
+		repository.deleteById(username);
 	}
 	
 }

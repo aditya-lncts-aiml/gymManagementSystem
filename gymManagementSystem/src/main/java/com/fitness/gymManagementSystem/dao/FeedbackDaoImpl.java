@@ -1,5 +1,7 @@
 package com.fitness.gymManagementSystem.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -16,17 +18,10 @@ public class FeedbackDaoImpl implements FeedbackDao {
 		repository.save(feedback);
 
 	}
+	
 	@Override
-	public Long generateFeedbackId() {
-		Long newId=repository.findLastFeedbackId();
-		if(newId==null)
-		{
-			newId=100000001L;
-		}
-		else {
-			newId=newId+1L;
-		}
-		return newId;
+	public List<Feedback> getFeedbackList(){
+		return repository.findAll();
 	}
 
 }

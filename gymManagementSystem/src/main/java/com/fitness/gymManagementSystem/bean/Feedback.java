@@ -2,39 +2,32 @@ package com.fitness.gymManagementSystem.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Feedback {
-    
-    @Id
-    private Long id;
+	@Id
+    private String username;
+	private String email;
     private String name;
-    private String email;
-    private int rating;
-    private String comments;
+    @Lob
+    private String content;
 	public Feedback() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Feedback(Long id, String name, String email, int rating, String comments) {
+	public Feedback(String username, String email, String name, String content) {
 		super();
-		this.id = id;
-		this.name = name;
+		this.username = username;
 		this.email = email;
-		this.rating = rating;
-		this.comments = comments;
-	}
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
 		this.name = name;
+		this.content = content;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getEmail() {
 		return email;
@@ -42,18 +35,16 @@ public class Feedback {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getRating() {
-		return rating;
+	public String getName() {
+		return name;
 	}
-	public void setRating(int rating) {
-		this.rating = rating;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getComments() {
-		return comments;
+	public String getContent() {
+		return content;
 	}
-	public void setComments(String comments) {
-		this.comments = comments;
+	public void setContent(String content) {
+		this.content = content;
 	}
-    
-    
 }

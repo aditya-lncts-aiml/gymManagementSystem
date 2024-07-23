@@ -20,12 +20,13 @@
         <div class="logo">STAMINA.</div>
         <ul>
             <li><a href="/index" class="active">HOME</a></li>
+            <li><a href="/customer-modification">CUSTOMERS</a></li>
             <li><a href="/gymitem">ADD ITEMS</a></li>
-            <li><a href="#">PRICING</a></li>
             <li><a href="/gymitems">GYM ITEMS</a></li>
             <li><a href="/slotentry">ADD SLOT</a></li>
+            <li><a href="/edit-slot">EDIT SLOT</a></li>
             <li><a href="/slotreport">SLOTS</a></li>
-            <li><a href="/feedback">FEEDBACK</a></li>
+            <li><a href="/feedback-report">FEEDBACKS</a></li>
             <li><a href="/booked">BOOKED SLOTS</a></li>
             <li><a href="/logout">LOGOUT</a></li>
         </ul>

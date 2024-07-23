@@ -33,7 +33,7 @@
     <br/><br/>
     Enter user Id: <form:input path="username" id="username" placeholder="Username" required="required"/>
     <br/><br/>
-    Enter Phone No.: <form:input path="phone_number" id="phone_number" type="text" maxlength="10" pattern="\d{10}" placeholder="Phone Number" required="required"/>
+    Enter Phone No.: <form:input path="phone_number" id="phone_number" type="tel" maxlength="10" pattern="\d{10}" placeholder="Phone Number" required="required"/>
     <br/><br/>
     Enter password: <form:input type="password" path="password" id="pass1" placeholder="Password" required="required"/>
     <br/><br/>
