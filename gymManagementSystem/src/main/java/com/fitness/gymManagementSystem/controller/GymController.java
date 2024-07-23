@@ -100,7 +100,6 @@ public class GymController {
     		throw new OperatorException("Page Not Found");
     	}
     }
-
     @PostMapping("/gymitem/update")
     public ModelAndView updateItemEntryPage(@ModelAttribute("itemRecord") GymItem gymItem) {
         gymItemDao.saveNewItem(gymItem);
@@ -287,7 +286,7 @@ public class GymController {
     		return mv;
     	}
     	else {
-    		throw new OperatorException("This is only for Admin");
+    		throw new OperatorException("Page not found");
     	}
     	
     }
@@ -324,21 +323,33 @@ public class GymController {
     }
     @GetMapping("/feedback-report")
     public ModelAndView showFeedbackReportpage() {
-    	List<Feedback> feedback = feedbackDao.getFeedbackList();
-    	ModelAndView mv=new ModelAndView("feedbackReportPage");
-    	mv.addObject("feedback",feedback);
-    	return mv;
-    }
-    @GetMapping("/edit-slot")
-    public ModelAndView showSlotEditPage() {
-    	List<Slot> slotList=slotDao.displayAllSlot();
-    	if(!slotList.isEmpty()) {
-        	ModelAndView mv=new ModelAndView("adminSlotReportPage");
-        	mv.addObject("slotList",slotList);
+    	String usertype=userService.getType();
+    	if(usertype.equalsIgnoreCase("Admin")) {
+    		List<Feedback> feedback = feedbackDao.getFeedbackList();
+        	ModelAndView mv=new ModelAndView("feedbackReportPage");
+        	mv.addObject("feedback",feedback);
         	return mv;
     	}
     	else {
-    		throw new OperatorException("No Slots Available");
+    		throw new OperatorException("Page not found");
+    	}
+    }
+    @GetMapping("/edit-slot")
+    public ModelAndView showSlotEditPage() {
+    	String usertype=userService.getType();
+    	if(usertype.equalsIgnoreCase("Admin")) {
+    		List<Slot> slotList=slotDao.displayAllSlot();
+        	if(!slotList.isEmpty()) {
+            	ModelAndView mv=new ModelAndView("adminSlotReportPage");
+            	mv.addObject("slotList",slotList);
+            	return mv;
+        	}
+        	else {
+        		throw new OperatorException("No Slots Available");
+        	}
+    	}
+    	else {
+    		throw new OperatorException("Page not found");
     	}
     }    
     @GetMapping("/slot/edit/{id}")
