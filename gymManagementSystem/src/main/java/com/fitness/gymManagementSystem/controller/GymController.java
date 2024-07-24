@@ -103,7 +103,7 @@ public class GymController {
     @PostMapping("/gymitem/update")
     public ModelAndView updateItemEntryPage(@ModelAttribute("itemRecord") GymItem gymItem) {
         gymItemDao.saveNewItem(gymItem);
-        return new ModelAndView("redirect:/gymitem");
+        return new ModelAndView("redirect:/gymitems");
     }
     @GetMapping("/gymitems")
     public ModelAndView showItemReportPage() {
