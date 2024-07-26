@@ -1,8 +1,7 @@
 package com.fitness.gymManagementSystem.service;
 
 import java.util.List;
-
-import javax.transaction.Transactional;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,12 +26,23 @@ public class GymUserService implements UserDetailsService {
 		return type;
 	}
 
-	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
-	 users=repository.findById(username).get();
-		type=users.getType();
-		return users;
-	}
+//	@Override
+//	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
+//	 users=repository.findById(username).get();
+//		type=users.getType();
+//		return users;
+//	}
+	 @Override
+	    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	        Optional<GymUser> optionalUser = repository.findById(username);
+	        if (optionalUser.isPresent()) {
+	        	users=repository.findById(username).get();
+	    		type=users.getType();
+	    		return users;
+	        } else {
+	            throw new UsernameNotFoundException("User not found with username: " + username);
+	        }
+	    }
 	public GymUser getUser() {
 		return users;
 	}

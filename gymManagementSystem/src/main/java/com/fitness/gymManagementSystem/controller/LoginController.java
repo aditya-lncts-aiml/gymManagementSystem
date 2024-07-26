@@ -6,8 +6,10 @@ import com.fitness.gymManagementSystem.service.GymUserService;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -56,4 +58,12 @@ public class LoginController {
 	public ModelAndView showLoginErrorPage() {
 		return new ModelAndView("loginErrorPage");
 	}
+	
+	
+//	 @ExceptionHandler(UsernameNotFoundException.class)
+//	    public ModelAndView handleUsernameNotFoundException(UsernameNotFoundException ex) {
+//	        ModelAndView mav = new ModelAndView("exceptionPage");
+//	        mav.addObject("errorMessage", "Username Not Found");
+//	        return mav;
+//	    }
 }

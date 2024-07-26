@@ -21,9 +21,7 @@ public class GymUser extends User{
 	private String password;
 	private String firstName;
 	private String lastName;
-	@Column(unique = true)
 	private String email;
-	@Column(unique = true)
 	private Long phone_number;
 	private String type;
 	public GymUser() {

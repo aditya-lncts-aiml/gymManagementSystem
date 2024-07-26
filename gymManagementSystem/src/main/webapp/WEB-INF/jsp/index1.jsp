@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online GYM Management System</title>
+    <!-- <link rel="stylesheet" href="/infosys.css"> -->
     <style>
         <%@include file="/WEB-INF/css/index.css"%>
     </style>
@@ -21,13 +22,29 @@
         <ul>
             <li><a href="/index" class="active">HOME</a></li>
             <li><a href="/customer-modification">CUSTOMERS</a></li>
-            <li><a href="/gymitem">ADD ITEMS</a></li>
-            <li><a href="/gymitems">GYM ITEMS</a></li>
-            <li><a href="/slotentry">ADD SLOT</a></li>
-            <li><a href="/edit-slot">EDIT SLOT</a></li>
-            <li><a href="/slotreport">SLOTS</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">GYM ITEM</a>
+                <div class="dropdown-content">
+                    <a href="/gymitem">ADD ITEMS</a>
+                    <a href="/gymitems">VIEW ITEMS</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">GYM SLOT</a>
+                <div class="dropdown-content">
+                    <a href="/slotentry">ADD SLOT</a>
+                    <a href="/edit-slot">VIEW SLOT</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">BOOKING</a>
+                <div class="dropdown-content">
+                    <a href="/slotreport">BOOK SLOT</a>
+                    <a href="/booked">VIEW BOOKING</a>
+                </div>
+            </li>
             <li><a href="/feedback-report">FEEDBACKS</a></li>
-            <li><a href="/booked">BOOKED SLOTS</a></li>
+            
             <li><a href="/logout">LOGOUT</a></li>
         </ul>
     </div>
