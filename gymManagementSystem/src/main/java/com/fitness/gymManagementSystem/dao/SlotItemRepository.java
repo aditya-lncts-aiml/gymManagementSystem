@@ -14,4 +14,7 @@ public interface SlotItemRepository extends JpaRepository<SlotItem, SlotItemEmbe
 	
 	@Query("SELECT embeddedId from SlotItem")
 	public Set<SlotItemEmbed> findAllEmbeds();
+	
+	@Query("SELECT CASE WHEN COUNT(s) > 0 THEN TRUE ELSE FALSE END FROM SlotItem s WHERE s.embeddedId.itemId = ?1")
+    boolean existsByItemId(Long itemId);
 }

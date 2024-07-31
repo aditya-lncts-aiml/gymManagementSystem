@@ -12,29 +12,33 @@
 </style>
 </head>
 <body>
-<div class="container" >
-<form action="/slotreport" method="post">
-<table >
-<caption><h1><i>Slots</i></h1></caption>
-<tr>
-<th>Slot Id</th>
-<th>Slot Time</th>
-<th>Slot Price</th>
-<th>Enquire</th>
-</tr>
-<c:forEach items="${slotList}" var="slot">
-<tr>
-<td>${slot.slotId}</td>
-<td>${slot.slotTime}</td>
-<td>${slot.pricing}</td>
-<td><a href="/slot-book/${slot.slotId}">Enquire</a></td>
-</tr>
-</c:forEach>
-</table>
-<div class="return">
-<a href="/index"><button type="button">Return</button></a>
-</div>
-</form>
-</div>
+	<div class="container">
+		<form action="/slotreport" method="post">
+			<table>
+				<caption>
+					<h1>
+						<i>Slots</i>
+					</h1>
+				</caption>
+				<tr>
+					<th>Slot Id</th>
+					<th>Slot Time</th>
+					<th>Slot Price</th>
+					<th>Enquire</th>
+				</tr>
+				<c:forEach items="${slotList}" var="slot">
+					<tr>
+						<td>${slot.slotId}</td>
+						<td>${slot.slotTime}</td>
+						<td>${slot.pricing}</td>
+						<td><a href="/slot-book/${slot.slotId}">Enquire</a></td>
+					</tr>
+				</c:forEach>
+			</table>
+			<div class="return">
+				<a href="/index"><button type="button">Return</button></a>
+			</div>
+		</form>
+	</div>
 </body>
 </html>

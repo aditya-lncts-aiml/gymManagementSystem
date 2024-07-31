@@ -58,12 +58,4 @@ public class LoginController {
 	public ModelAndView showLoginErrorPage() {
 		return new ModelAndView("loginErrorPage");
 	}
-	
-	
-//	 @ExceptionHandler(UsernameNotFoundException.class)
-//	    public ModelAndView handleUsernameNotFoundException(UsernameNotFoundException ex) {
-//	        ModelAndView mav = new ModelAndView("exceptionPage");
-//	        mav.addObject("errorMessage", "Username Not Found");
-//	        return mav;
-//	    }
 }

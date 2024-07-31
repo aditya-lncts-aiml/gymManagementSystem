@@ -13,10 +13,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>Edit Exercise</h1>
+        <h1>Edit Slot</h1>
         <form:form id="edit-item-form" action="/slot/update" method="post" modelAttribute="slotRecord">
             <div>
-                <label for="slotTime">Exercise Name: ${slotTime}</label>
+                <label for="slotTime">Slot Time: ${slotTime}</label>
                 <form:input path="slotTime"/>
             </div>
             <form:hidden path="slotId"/>
@@ -28,7 +28,7 @@
             <br/>
             <button type="reset">Reset</button>
             <br/>
-            <a href="/gymitem"><button type="button">Return</button></a>
+            <a href="/index"><button type="button">Home</button></a>
         </form:form>
     </div>
 </body>

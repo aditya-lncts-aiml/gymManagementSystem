@@ -28,7 +28,7 @@
             <br/>
             <button type="reset">Reset</button>
             <br/>
-            <a href="/gymitem"><button type="button">Return</button></a>
+            <a href="/index"><button type="button">Home</button></a>
         </form:form>
     </div>
 </body>

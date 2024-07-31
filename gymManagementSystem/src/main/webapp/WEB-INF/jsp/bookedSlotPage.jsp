@@ -7,11 +7,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Bookings</title>
-</head>
 <style type="text/css">
 <%@ include file="/WEB-INF/css/slotBookPage.css" %>
 </style>
-
+</head>
 <body>
 <div class="container">
     <h1>Bookings</h1>

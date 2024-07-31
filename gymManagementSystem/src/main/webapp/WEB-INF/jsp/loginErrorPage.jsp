@@ -12,9 +12,9 @@
 </head>
 <body>
 
-<div class="container">
-    <h1>Invalid Username or Password</h1>
-<a href="/index">Return</a>
-</div>
+	<div class="container">
+		<h1>Invalid Username or Password</h1>
+		<a href="/index">Return</a>
+	</div>
 </body>
 </html>
