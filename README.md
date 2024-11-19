@@ -14,7 +14,9 @@ Run
        
 Run 
 
-      ./mvnw clean install  it gives you build success. 
+      ./mvnw clean install
+
+it gives you build success. 
 
 Then run 
    
