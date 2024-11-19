@@ -8,12 +8,19 @@ Set the MySQL password as root.
 
 Open terminal or bash.
 
-Open the cloned folder which opened as
+Run
        
-       PS D:\Java\Project\gymManagementSystem\gymManagementSystem>
+       git clone https://github.com/theadityarajofficial/gymManagementSystem.git
        
-Run ./mvnw clean install  it gives you build success. 
+Run 
 
-Then run ./mvnw spring-boot:run
+      ./mvnw clean install  it gives you build success. 
 
-Then search for localhost:9898/index on browser 
+Then run 
+   
+      ./mvnw spring-boot:run
+
+Then search for 
+        
+       localhost:9898/index
+on browser 
