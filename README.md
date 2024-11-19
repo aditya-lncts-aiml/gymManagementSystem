@@ -10,12 +10,13 @@ Open terminal or bash.
 
     cd gymManagementSystem
 
-it shown as    PS D:\Java\Project\gymManagementSystem\gymManagementSystem>
 
 Run
        
     git clone https://github.com/theadityarajofficial/gymManagementSystem.git
-       
+
+it shown as    PS D:\Java\Project\gymManagementSystem\gymManagementSystem>
+
 Run 
 
     ./mvnw clean install
