@@ -6,14 +6,14 @@ Download MySQL.
 
 Set the MySQL password as root.
 
+Run
+       
+    git clone https://github.com/theadityarajofficial/gymManagementSystem.git
+
 Open terminal or bash. 
 
     cd gymManagementSystem
 
-
-Run
-       
-    git clone https://github.com/theadityarajofficial/gymManagementSystem.git
 
 it shown as    PS D:\Java\Project\gymManagementSystem\gymManagementSystem>
 
