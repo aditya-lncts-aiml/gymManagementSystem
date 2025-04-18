@@ -1,4 +1,6 @@
-# Gym Management System
+# Online Gym Management System
+
+The Online Gym Management System (OGMS) is a modern web-based application designed to transform and streamline gym operations through automation and digital management. Built using robust technologies like Spring Boot, Spring Data JPA, MySQL, JSP, and more, OGMS caters to the evolving needs of the fitness industry by replacing traditional, manual processes with a centralized, efficient, and scalable solution.
 
 Download Apache Tomcat 9.
 
